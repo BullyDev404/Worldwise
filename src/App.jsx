@@ -9,6 +9,7 @@ import AppLayout from "./pages/AppLayout";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
 import CountryList from "./components/CountryList";
+import City from "./components/City";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -45,7 +46,7 @@ function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
-          <Route path='cities/:id'
+          <Route path='cities/:id'element ={<City/>}/>  {/* linking url with state */}
           <Route path="countries" element={<CountryList cities={cities} />} />
           <Route path="form" element={<p>Form</p>} />
         </Route>
