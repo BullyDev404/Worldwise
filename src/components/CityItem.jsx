@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
-import twemoji from "twemoji";
-
 import styles from "./CityItem.module.css";
 import { Link } from "react-router-dom";
+import EmojiMaker from "./EmojiMaker";
+import { useCities } from "../contexts/CitiesContext";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -13,26 +12,31 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
+  const { currentCity } = useCities();
   const { cityName, emoji, date, id, position } = city;
 
-  const emojiRef = useRef(null);
+  // const emojiRef = useRef(null);
 
-  useEffect(() => {
-    twemoji.parse(emojiRef.current, {
-      folder: "svg",
-      ext: ".svg",
-    });
-  }, [emoji]);
+  // useEffect(() => {
+  //   twemoji.parse(emojiRef.current, {
+  //     folder: "svg",
+  //     ext: ".svg",
+  //   });
+  // }, [emoji]);
 
   return (
     <li>
       <Link
-        className={styles.cityItem}
+        className={`${styles.cityItem} ${
+          id === currentCity.id ? styles["cityItem--active"] : ""
+        }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
-        <span ref={emojiRef} className={styles.emoji}>
+        {/* <span ref={emojiRef} className={styles.emoji}>
           {emoji}
-        </span>
+        </span> */}
+
+        <EmojiMaker emoji={emoji} />
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
         <button className={styles.deleteBtn}>&times;</button>

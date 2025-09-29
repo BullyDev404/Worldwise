@@ -24,7 +24,8 @@ function App() {
           <Route path="app" element={<AppLayout />}>
             <Route index element={<Navigate replace to="cities" />} />
             <Route path="cities" element={<CityList />} />
-            <Route path="cities/:id" element={<City />} />{" "}
+            <Route path="cities/:id" element={<City />} />
+            
             {/* linking url with state */}
             <Route path="countries" element={<CountryList />} />
             <Route path="form" element={<Form />} />
