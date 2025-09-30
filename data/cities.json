@@ -35,6 +35,30 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Lagos",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "date": "2027-11-20T10:45:32.000Z",
+      "notes": "Bustling city by the Atlantic coast.",
+      "position": {
+        "lat": 6.524379,
+        "lng": 3.379206
+      },
+      "id": 45219876
+    },
+    {
+      "cityName": "Abuja",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "date": "2027-08-21T10:45:32.512Z",
+      "notes": "Capital city with beautiful landscapes.",
+      "position": {
+        "lat": 9.05785,
+        "lng": 7.49508
+      },
+      "id": 56293847
     }
   ]
 }
