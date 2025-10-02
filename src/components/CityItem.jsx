@@ -12,17 +12,15 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function CityItem({ city }) {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
   const { cityName, emoji, date, id, position } = city;
 
-  // const emojiRef = useRef(null);
+  function handleClick(e) {
+    e.preventDefault();
+    // alert("Are you sure you want to delete this city?");
 
-  // useEffect(() => {
-  //   twemoji.parse(emojiRef.current, {
-  //     folder: "svg",
-  //     ext: ".svg",
-  //   });
-  // }, [emoji]);
+    deleteCity(id);
+  }
 
   return (
     <li>
@@ -39,7 +37,9 @@ function CityItem({ city }) {
         <EmojiMaker emoji={emoji} />
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>{formatDate(date)}</time>
-        <button className={styles.deleteBtn}>&times;</button>
+        <button className={styles.deleteBtn} onClick={handleClick}>
+          &times;
+        </button>
       </Link>
     </li>
   );
