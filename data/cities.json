@@ -47,6 +47,18 @@
         "lng": 3.379206
       },
       "id": 45219876
+    },
+    {
+      "cityName": "Obafemi Owode",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "date": "2025-10-04T21:20:30.419Z",
+      "notes": "This is where I live, so this is one place i visit all the time",
+      "position": {
+        "lat": 6.8017566079120435,
+        "lng": 3.421640396118164
+      },
+      "id": 98443198
     }
   ]
 }
